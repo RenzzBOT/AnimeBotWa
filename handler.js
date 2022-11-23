@@ -518,7 +518,7 @@ export async function handler(chatUpdate) {
                 } else if (plugin.botAdmin && !isBotAdmin) { // You Admin
                     fail('botAdmin', m, this)
                     continue
-                } else if (plugin.admin && !isAdmin) { // User Admin
+                } else if (plugin.admin && !isAdminRelz) { // User Admin
                     fail('admin', m, this)
                     continue
                 }
