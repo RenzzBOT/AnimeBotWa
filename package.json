@@ -1,5 +1,5 @@
 {
-    "name": "Elaina-BOT",
+    "name": "RELZXD-BOTZ",
     "version": "3.3.0",
     "description": "RPG BOT Whatsapp",
     "main": "index.js",
@@ -31,7 +31,7 @@
     ],
     "homepage": "https://github.com/ImYanXiao/Elaina-MultiDevice",
     "author": {
-        "name": "ImYanXiao"
+        "name": "RellzStore"
     },
     "repository": {
         "type": "git",
