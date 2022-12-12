@@ -436,7 +436,7 @@ const listMessage = {
   "product": {
   "productImage":{
   "mimetype": "image/jpeg",
-  "jpegThumbnail": fs.readFileSync('./thumbnail.jpg'),
+  "jpegThumbnail": fs.readFileSync('./ppbot.jpg'),
     },
   "title": `${ucapan()}`,
   "description": '𝗧 𝗜 𝗠 𝗘 : ' + wktuwib,
