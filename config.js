@@ -47,9 +47,9 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 /*============== SOCIAL ==============*/
 
 // kalo ga punya ketik "-" atau biarin aja biar ada creditsnya :v
-global.sig = 'https://instagram.com/rellz.fvnkyy' //Link Instagrammu
-global.sgh = 'https://github.com/rellzxd' //Link Githubmu
-global.sgc = 'https://chat.whatsapp.com/HVenZa9q0tY12Mdpq2hXwn'
+global.sig = ' https://instagram.com/rellz.fvnkyy ' //Link Instagrammu
+global.sgh = ' https://github.com/rellzxd ' //Link Githubmu
+global.sgc = ' https://chat.whatsapp.com/HVenZa9q0tY12Mdpq2hXwn '
 global.sdc = '-' //Isi Pake Link Discordmu Kalo Gada Biarin aja
 global.snh = 'https://nhentai.net/g/HaramTod!🗿' //Hmmm, Ini boleh kalian isi terserah :v
 
