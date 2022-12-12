@@ -12,41 +12,41 @@ const { makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromCon
 
 const defaultMenu = {
   before: `
-╭─────═[ INFO USER ]═─────⋆
+╭─────═[ U S E R S I N F O ]═─────⋆
 │╭───────────────···
-┴│☂︎ *Name:* %name
-⬡│☂︎ *Tag:* %tag
-⬡│☂︎ *Premium:* %prems
-⬡│☂︎ *Limit:* %limit
-⬡│☂︎ *Money:* %money
-⬡│☂︎ *Role:* %role
-⬡│☂︎ *Level:* %level [ %xp4levelup Xp For Levelup]
-⬡│☂︎ *Xp:* %exp / %maxexp
-┬│☂︎ *Total Xp:* %totalexp
+┴│☂︎ *NAME :* %name
+⬡│☂︎ *TAG :* %tag
+⬡│☂︎ *PREMIUM :* %prems
+⬡│☂︎ *LIMIT :* %limit
+⬡│☂︎ *MONEY :* %money
+⬡│☂︎ *ROLE :* %role
+⬡│☂︎ *LEVEL :* %level [ %xp4levelup Xp For Levelup]
+⬡│☂︎ *XP :* %exp / %maxexp
+┬│☂︎ *TOTAL XP :* %totalexp
 │╰────────────────···
-┠─────═[ TODAY ]═─────⋆
+┠─────═[ T O D A Y ]═─────⋆
 │╭────────────────···
 ┴│    *${ucapan()} %name!*
-⬡│☂︎ *Tanggal:* %week %weton
-⬡│☂︎ *Date:* %date
-⬡│☂︎ *Tanggal Islam:* %dateIslamic
-┬│☂︎ *Waktu:* %time
+⬡│☂︎ *TANGGAL :* %week %weton
+⬡│☂︎ *DATE :* %date
+⬡│☂︎ *TANGGAL ISLAM :* %dateIslamic
+┬│☂︎ *WAKTU :* %time
 │╰────────────────···
-┠─────═[ INFO BOT ]═─────⋆
+┠─────═[ B O T I N F O ]═─────⋆
 │╭────────────────···
-┴│☂︎ *Nama Bot:* %me
-⬡│☂︎ *Mode:* %mode
-⬡│☂︎ *Prefix:* [ *%_p* ]
-⬡│☂︎ *Baileys:* Multi Device
-⬡│☂︎ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-⬡│☂︎ *Platform:* %platform
-⬡│☂︎ *Type:* Node.Js
-⬡│☂︎ *Uptime:* %muptime
-┬│☂︎ *Database:* %rtotalreg dari %totalreg
+┴│☂︎ *NAME BOT :* %me
+⬡│☂︎ *MODE :* %mode
+⬡│☂︎ *PREFIX :* [ *%_p* ]
+⬡│☂︎ *BAILEYS :* Multi Device
+⬡│☂︎ *BATTERY :* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
+⬡│☂︎ *PLATFORM :* %platform
+⬡│☂︎ *TYPE :* Node.Js
+⬡│☂︎ *UPTIME :* %muptime
+┬│☂︎ *DATABASE :* %rtotalreg dari %totalreg
 │╰────────────────···
 ╰──────────═┅═──────────
 
-⃝▣──「 *INFO CMD* 」───⬣
+⃝▣──「 *I N F O C M D* 」───⬣
 │ *Ⓟ* = Premium
 │ *Ⓛ* = Limit
 ▣────────────⬣
@@ -263,68 +263,73 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 	    {title: `⚡ ${pmenus} 𝚂𝙿𝙴𝙴𝙳 𝙱𝙾𝚃`, rowId: ".ping", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙺𝚎𝚌𝚎𝚙𝚊𝚝𝚊𝚗 𝚁𝚎𝚜𝚙𝚘𝚗 𝙱𝙾𝚃"},
 	    {title: `⏰ ${pmenus} 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 𝙱𝙾𝚃`, rowId: ".runtime", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝚆𝚊𝚔𝚝𝚞 𝙱𝙾𝚃 𝙱𝚎𝚛𝚓𝚊𝚕𝚊𝚗"}, 
 	    {title: `💌 ${pmenus} 𝙾𝚆𝙽𝙴𝚁 𝙱𝙾𝚃`, rowId: ".creator", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙸𝚗𝚏𝚘𝚛𝚖𝚊𝚜𝚒 𝚃𝚎𝚗𝚝𝚊𝚗𝚐 𝙾𝚠𝚗𝚎𝚛"},
-	    {title: `📔 ${pmenus} 𝚂𝙲𝚁𝙸𝙿𝚃 𝙱𝙾𝚃`, rowId: ".sc", description: `𝚂𝚘𝚞𝚛𝚌𝚎 𝙲𝚘𝚍𝚎 ${namebot}`},
 	]
     },{
 	title: `${htki} sᴜᴘᴘᴏʀᴛ ${htka}`,
 	rows: [
-	    {title: `💹 ${pmenus} 𝙳𝙾𝙽𝙰𝚃𝙴`, rowId: ".donasi", description: '𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙾𝚠𝚗𝚎𝚛 𝙰𝚐𝚊𝚛 𝙻𝚎𝚋𝚒𝚑 𝚂𝚎𝚖𝚊𝚗𝚐𝚊𝚝'},
+	    {title: `💹 ${pmenus} 𝙳𝙾𝙽𝙰𝚃𝙴`, rowId: ".donasi", description: '𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙾𝚠𝚗𝚎𝚛 𝙰𝚐𝚊𝚛 𝙻𝚎𝚋𝚒𝚑 𝚂𝚎𝚖𝚊𝚗𝚐𝚊𝚝!'},
 	]
 	},{
 	title: `${htki} ᴍᴇɴᴜ ${htka}`,
 	rows: [
-	    {title: `💬 ${pmenus} All`, rowId: ".? all", description: "Menampilkan Semua command BOT"},
-	    {title: `🌱 ${pmenus} Rpg`, rowId: ".? rpg", description: "Game Epic Rpg!"},
-	{title: `✨ ${pmenus} Exp`, rowId: ".? xp", description: "Ayo tingkatkan pangkat mu!"},
-	{title: `🎮 ${pmenus} Game`, rowId: ".? game", description: "Gamenya seru seru lho (๑˃̵　ᴗ　˂̵)"},
-	{title: `🧩 ${pmenus} Fun`, rowId: ".? fun", description: "Fitur yang aman untuk keluarga"},
-	{title: `🐚 ${pmenus} Kerang`, rowId: ".? kerangajaib", description: "Tanyakan pada ketua club"},
-	{title: `📑 ${pmenus} Quotes`, rowId: ".? quotes", description: "Random Inspirasi"},
-	{title: `⛩️ ${pmenus} Anime`, rowId: ".? anime", description: "Wibu wibu🐦"},
-	{title: `🔞 ${pmenus} Nsfw`, rowId: ".? nsfw", description: "Tch, dasar sagnean"},
-	{title: `🌟 ${pmenus} Premium`, rowId: ".? premium", description: "Untuk user premium"},
-	{title: `🎭 ${pmenus} Anonymous Chats`, rowId: ".? anonymous", description: "Bicara dengan orang tidak dikenal"},
-	{title: `📖 ${pmenus} Al-Quran`, rowId: ".? quran", description: "Tobat yuk kak"},
-	{title: `🌎 ${pmenus} Internet`, rowId: ".? internet", description: "Cari sesuatu diBOT"},
-	{title: `📩 ${pmenus} Downloaders`, rowId: ".? downloader", description: "Download sesuatu dari BOT"},
-	{title: `🎨 ${pmenus} Stikers`, rowId: ".? stiker", description: "Buat Sticker diBOT"},
-	{title: `✏️ ${pmenus} Nulis`, rowId: ".? nulis", description: "Nulis kok males kak?"},
-	{title: `🎧 ${pmenus} Audio`, rowId: ".? audio", description: "Ubah Audio dengan Filter"},
-	{title: `🏢 ${pmenus} Group`, rowId: ".? group", description: "Only Groups"},
-	{title: `👑 ${pmenus} Admin`, rowId: ".? admin", description: "Only Admin Group"},
-	{title: `🗂️ ${pmenus} Database`, rowId: ".? database", description: "Simpan sesuatu diBOT"},
-	{title: `🛠️ ${pmenus} Tools`, rowId: ".? tools", description: "Mungkin tools ini bisa membantu?"},
-	{title: `ℹ️ ${pmenus} Info`, rowId: ".? info", description: "Info info BOT"},
-	{title: `👩‍💻 ${pmenus} Owner`, rowId: ".? owner", description: "Owner Only!"},
-	{title: `❓ ${pmenus} No Category`, rowId: ".? nocategory", description: "Fitur tanpa kategory!"},
+	    {title: `💬 ${pmenus} ALL MENU`, rowId: ".? all", description: "> Menampilkan Semua command BOT"},
+	    {title: `🌱 ${pmenus} RPG`, rowId: ".? rpg", description: "> Game Epic Rpg!"},
+	{title: `✨ ${pmenus} EXP`, rowId: ".? xp", description: "> Ayo tingkatkan pangkat mu!"},
+	{title: `🎮 ${pmenus} GAME`, rowId: ".? game", description: "> Gamenya seru seru lho >-<"},
+	{title: `🧩 ${pmenus} FUN`, rowId: ".? fun", description: "> Fitur yang aman untuk keluarga"},
+	{title: `🐚 ${pmenus} KERANG`, rowId: ".? kerangajaib", description: "> Tanyakan pada ketua club"},
+	{title: `📑 ${pmenus} QUOTES`, rowId: ".? quotes", description: "> Random Inspirasi"},
+	{title: `⛩️ ${pmenus} ANIME`, rowId: ".? anime", description: "> Lari ada wibu broh🗿"},
+	{title: `🔞 ${pmenus} NSFW`, rowId: ".? nsfw", description: "> Tch, dasar sagnean"},
+	{title: `🌟 ${pmenus} PREMIUM`, rowId: ".? premium", description: "> Only User Premium!"},
+	{title: `🎭 ${pmenus} ANONYMOUS CHATS`, rowId: ".? anonymous", description: "> Bicara dengan orang tidak dikenal"},
+	{title: `📖 ${pmenus} AL-QURAN`, rowId: ".? quran", description: "> Tobat yuk kak :)"},
+	{title: `🌎 ${pmenus} INTERNET`, rowId: ".? internet", description: "> Cari sesuatu diBOT"},
+	{title: `📩 ${pmenus} DOWNLOADERS`, rowId: ".? downloader", description: "> Download sesuatu dari BOT"},
+	{title: `🎨 ${pmenus} STIKERS`, rowId: ".? stiker", description: "> Buat Sticker diBOT"},
+	{title: `✏️ ${pmenus} NULIS`, rowId: ".? nulis", description: "> Nulis kok males kak?"},
+	{title: `🎧 ${pmenus} AUDIO`, rowId: ".? audio", description: "> Ubah Audio dengan Filter"},
+	{title: `🏢 ${pmenus} GROUP`, rowId: ".? group", description: "> Only In Groups!"},
+	{title: `👑 ${pmenus} ADMIN`, rowId: ".? admin", description: "> Only Admin Group!"},
+	{title: `🗂️ ${pmenus} DATABASE`, rowId: ".? database", description: "> Simpan sesuatu diBOT"},
+	{title: `🛠️ ${pmenus} TOOLS`, rowId: ".? tools", description: "> Mungkin tools ini bisa membantu?"},
+	{title: `ℹ️ ${pmenus} INFO`, rowId: ".? info", description: "> Info BOT"},
+	{title: `👩‍💻 ${pmenus} OWNER`, rowId: ".? owner", description: "> Owner Only!"},
+	{title: `❓ ${pmenus} NO CATEGORY`, rowId: ".? nocategory", description: "> Fitur tanpa kategory!"},
 	]
   },
 ]
 
-let tek = `✧────···[ Dashboard ]···────✧
+let tek = `✧─═┅═─···『 *D A S H B O A R D* 』···─═┅═─✧
 *${ucapan()} ${conn.getName(m.sender)}*
-╭━━━━━━━━━━━━━━━━┈─✧
-┴
-│⬡ Aktif selama ${mpt}
-│⬡ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-│⬡ Prefix : [ ${_p} ]
-│⬡ *${Object.keys(global.db.data.users).length}* Pengguna
-│⬡ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-│⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+╭┈━━━━━━━━━━━━━━━━┈✧
+
+│         *S T A T U S  I N F O*
+
+│┈━━━━━━━━━━━━━━━━┈✧
+│
+│⬡ *𝚄𝙿𝚃𝙸𝙼𝙴 :* ${mpt}
+│⬡ *𝙱𝙰𝚃𝙴𝚁𝙰𝙸 :* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
+│⬡ *𝙿𝚁𝙴𝙵𝙸𝚇 :* [ ${_p} ]
+│⬡ *𝚄𝚂𝙴𝚁𝚂 𝚅𝙴𝚁𝙸𝙵𝚈 :* ${Object.keys(global.db.data.users).length}
+│⬡ *𝙲𝙷𝙰𝚃 𝚃𝙴𝚁𝙱𝙰𝙽𝙽𝙴𝙳 :* ${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}
+│⬡ *𝚄𝚂𝙴𝚁𝚂 𝚃𝙴𝚁𝙱𝙰𝙽𝙽𝙴𝙳 :* ${Object.entries(global.db.data.users).filter(user => user[1].banned).length}
+┴━━━━━━━━━━━━━━━━┈─⋆
 ┬
 ├━━━━━━━━━━━━━━━━┈─⋆
-│ ▸ *ᴀᴜᴛʜᴏʀ :* ʙᴏᴄʜɪʟɢᴀᴍɪɴɢ
-┴ ▸ *ᴏᴡɴᴇʀ :* ɪᴍ-ʏᴀɴxɪᴀᴏ
+│ ▸ *ᴀᴜᴛʜᴏʀ :* ᴀɴᴅɪᴋᴀ ᴄʀᴜᴇʟ
+┴ ▸ *ᴏᴡɴᴇʀ :* ʀᴇʟʟᴢ ꜰᴀᴍᴏᴜꜱ
+┴━━━━━━━━━━━━━━━━┈─⋆
 ✧
-┬ 📌 𝗣𝗶𝗻𝗻𝗲𝗱 :
-│ ʙᴇʀɪ ᴊᴇᴅᴀ ʏᴀʜ ᴋᴀᴋ ^ω^
+┬ 📌 𝗣𝗜𝗡𝗡𝗘𝗗 :
+│ ʙᴇʀɪ ᴊᴇᴅᴀ ʏᴀʜ ᴋᴀᴋ ^_^
 ╰━━━━━━━━━━━━━━━━┈─◂`
 const listMessage = {
   text: tek,
   footer: wm2,
   mentions: await conn.parseMention(tek),
   title: ``,
-  buttonText: `Klik Disini ⎙`, 
+  buttonText: `CLICK DISINI ⎙`, 
   sections
 }
   if (teks == '404') {
@@ -485,7 +490,7 @@ const listMessage = {
     }
     }
     }
-    conn.reply(m.chat, '*Tunggu Sebentar Kak. . .*', ftrol) 
+    conn.reply(m.chat, '```「▰▰▰▰▱▱▱▱▱▱」Loading...```', ftrol) 
     
     //------------------< MENU >----------------
     
@@ -543,7 +548,7 @@ const listMessage = {
                 {
                     urlButton: {
                         displayText: `${namebot}`,
-                        url: 'https://github.com/ImYanXiao/Elaina-MultiDevice'
+                        url: 'want the script? in private chat!'
                     }
                 },
                 {
@@ -618,7 +623,7 @@ const listMessage = {
       ['⚡ sᴘᴇᴇᴅᴛᴇsᴛ', `${_p}speedtest`]
     ], m, {asLocation: true}))*/
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Maaf,Menu sedang error.'. m)
     throw e
   }
 }
@@ -657,18 +662,18 @@ function clockStringP(ms) {
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Kok Belum Tidur Kak? 🥱"
+  let res = "Tidur Kak Udah Malem!🥱"
   if (time >= 4) {
-    res = "Pagi Lord 🌄"
+    res = "𝗣𝗮𝗴𝗶 𝗞𝗮𝗸 🌄"
   }
   if (time >= 10) {
-    res = "Siang Lord ☀️"
+    res = "𝗦𝗶𝗮𝗻𝗴 𝗞𝗮𝗸 ☀️"
   }
   if (time >= 15) {
-    res = "Sore Lord 🌇"
+    res = "𝗦𝗼𝗿𝗲 𝗞𝗮𝗸 🌇"
   }
   if (time >= 18) {
-    res = "Malam Lord 🌙"
+    res = "𝗠𝗮𝗹𝗮𝗺 𝗞𝗮𝗸 🌙"
   }
   return res
 }
